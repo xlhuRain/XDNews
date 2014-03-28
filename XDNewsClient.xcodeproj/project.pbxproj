@@ -1336,6 +1336,7 @@
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK",
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK/UI",
+					"$(PROJECT_DIR)/XDNewsClient",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDNewsClient/XDNewsClient-Prefix.pch";
@@ -1351,8 +1352,10 @@
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/LaiWang",
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/YiXin",
+					"$(PROJECT_DIR)/XDNewsClient",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1377,6 +1380,7 @@
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK",
 					"$(PROJECT_DIR)/XDNewsClient/XDmagazine/ShareSDK/UI",
+					"$(PROJECT_DIR)/XDNewsClient",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDNewsClient/XDNewsClient-Prefix.pch";
@@ -1392,7 +1396,9 @@
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/LaiWang",
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/XDNewsClient/UMSocial_Sdk_Extra_Frameworks/YiXin",
+					"$(PROJECT_DIR)/XDNewsClient",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

@@ -56,6 +56,7 @@
     
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 175)];
     
+    _contentView.backgroundColor = [UIColor redColor];
     _homeScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 175)];
     _homeScroll.delegate = self;
     _homeScroll.pagingEnabled = YES;
@@ -73,20 +74,22 @@
     [self loadHeadView];
     
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 41, 320, self.view.frame.size.height-41) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 61, 320, self.view.frame.size.height-61) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor colorWithRed:37.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.clipsToBounds = NO;
+    self.tableView.clipsToBounds = YES;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.decelerationRate = 0.1;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.tableView setTableHeaderView:_contentView];
     
     [self.view addSubview:self.tableView];
     
-    [self.tableView setTableHeaderView:_contentView];
     
-    UIImageView *headImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
+    
+    UIImageView *headImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, 45)];
     headImageView.image = [UIImage imageNamed:@"bar.png"];
     headImageView.userInteractionEnabled = YES;
     
@@ -116,7 +119,7 @@
     //            });
     //        }
     //    });
-    _guideImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,320,548)];
+    _guideImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20,320,548)];
     _guideImageView.image = [UIImage imageNamed:@"welcome.jpg"];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeWelcome:)];
@@ -147,7 +150,7 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         
-        _guideImageView.frame = CGRectMake(-320, 0, 320, 548);
+        _guideImageView.frame = CGRectMake(-320, 20, 320, 548);
         
     } completion:^(BOOL finished){
         
@@ -270,7 +273,7 @@
 }
 
 //-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return 30;
+//    return 175;
 //}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -321,10 +324,6 @@
     self.contentScrView.shareTitle = [[_homeDic objectForKey:@"share"] objectForKey:@"shareTitle"];
     self.contentScrView.view.backgroundColor = [UIColor clearColor];
     [self.navigationController pushViewController:self.contentScrView animated:YES ];
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    }
-    
 }
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
@@ -342,9 +341,9 @@
     
     _homeDic = [[ConnectAPI sharedInstance] getLocalData];
     [self getShareContent];
-    
-    [self.tableView reloadData];
     [self reloadScrollView];
+    [self.tableView reloadData];
+    
 }
 
 

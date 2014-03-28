@@ -18,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; 
+    
     [UMSocialData setAppKey:@"507fcab25270157b37000010"];
     
     //设置微信AppId，url地址传nil，将默认使用友盟的网址

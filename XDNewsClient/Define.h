@@ -15,7 +15,8 @@
 
 #define ScreenWidth     [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight    [[UIScreen mainScreen] bounds].size.height
-#define IS_IPHONE_5     ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_IPHONE_5     ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )  ) < DBL_EPSILON )
+#define iOS7 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 
 #define WINDOW [[UIApplication sharedApplication].delegate window]
 #define APPDElEGATE [[UIApplication sharedApplication] delegate]
 
