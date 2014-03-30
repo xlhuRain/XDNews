@@ -56,7 +56,6 @@
     
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 175)];
     
-    _contentView.backgroundColor = [UIColor redColor];
     _homeScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 175)];
     _homeScroll.delegate = self;
     _homeScroll.pagingEnabled = YES;
@@ -74,7 +73,7 @@
     [self loadHeadView];
     
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 61, 320, self.view.frame.size.height-61) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 21, 320, self.view.frame.size.height-21) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor colorWithRed:37.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -83,6 +82,7 @@
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.decelerationRate = 0.1;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
     [self.tableView setTableHeaderView:_contentView];
     
     [self.view addSubview:self.tableView];
@@ -92,7 +92,8 @@
     UIImageView *headImageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, 45)];
     headImageView.image = [UIImage imageNamed:@"bar.png"];
     headImageView.userInteractionEnabled = YES;
-    
+    headImageView.backgroundColor = [UIColor clearColor];
+
     UIImageView *titleHeader = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 45)];
     titleHeader.center = CGPointMake(160, 23);
     titleHeader.image = [UIImage imageNamed:@"title.png"];

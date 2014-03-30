@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagViewController.h"
 
 @interface ViewController : UIViewController
+
+
+@property(nonatomic,strong)MagViewController *magViewController;
 
 
 @end

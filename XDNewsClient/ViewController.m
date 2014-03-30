@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "NewsViewController.h"
-#import "MagViewController.h"
+
 
 @interface ViewController ()
 
@@ -19,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -32,7 +31,6 @@
 
 -(IBAction)buttonClick:(UIButton *)sender{
 
-
     NewsViewController *newsViewController = [[NewsViewController alloc] init];
     newsViewController.typeId = sender.tag;
     [self.navigationController pushViewController:newsViewController animated:YES];
@@ -41,8 +39,10 @@
 
 -(IBAction)MagazineButtonClick:(id)sender{
    
-    MagViewController *magViewController = [[MagViewController alloc] init];
-    [self.navigationController pushViewController:magViewController animated:YES];
+    if (!self.magViewController) {
+        self.magViewController = [[MagViewController alloc] init];
+    }
+    [self.navigationController pushViewController:self.magViewController animated:YES];
     
 }
 

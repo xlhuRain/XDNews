@@ -39,8 +39,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.viewController.view.backgroundColor = [UIColor colorWithRed:37.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    
+    self.navigationController.navigationBar.hidden = YES;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
