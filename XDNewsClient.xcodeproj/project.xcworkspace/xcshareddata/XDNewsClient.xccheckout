@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C45C3B78-62D6-4388-98AF-27CAC9BF36F9</string>
+	<string>EC015BA4-7BCD-4CBD-B948-9C69BE464152</string>
 	<key>IDESourceControlProjectName</key>
 	<string>XDNewsClient</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F50661A8-ECF6-42E7-96C6-C41F20980789</key>
-		<string>https://github.com/xlhuRain/Test.git</string>
+		<key>7DE8A7E2-F9E5-491D-B26E-EEC1EA5A7EE9</key>
+		<string>https://github.com/xlhuRain/XDNews.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>XDNewsClient.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F50661A8-ECF6-42E7-96C6-C41F20980789</key>
+		<key>7DE8A7E2-F9E5-491D-B26E-EEC1EA5A7EE9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xlhuRain/Test.git</string>
+	<string>https://github.com/xlhuRain/XDNews.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F50661A8-ECF6-42E7-96C6-C41F20980789</string>
+	<string>7DE8A7E2-F9E5-491D-B26E-EEC1EA5A7EE9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F50661A8-ECF6-42E7-96C6-C41F20980789</string>
+			<string>7DE8A7E2-F9E5-491D-B26E-EEC1EA5A7EE9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Test</string>
+			<string>XDNews</string>
 		</dict>
 	</array>
 </dict>

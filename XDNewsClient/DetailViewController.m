@@ -6,9 +6,15 @@
 //  Copyright (c) 2014年 xlhu. All rights reserved.
 //
 
+#import "UIActivityIndicatorView+AFNetworking.h"
 #import "DetailViewController.h"
+#import "Define.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface DetailViewController ()
+
+@property(nonatomic,strong)UIWebView *webView;
+@property(nonatomic,strong)UIActivityIndicatorView *indicatorView;
 
 @end
 
@@ -26,7 +32,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view from its nib.
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight - 20)];
+    [self.view addSubview:self.webView];
+    
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview:self.indicatorView];
+    
+    
+//    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+//    requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    NSDictionary *parameters = @{@"id":@"11"};
+//    [requestManager POST:@"http://www.baidu.com" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//    
+//    }];
+    
+//    AFHTTPRequestOperation *operation = [AFHTTPRequestOperation alloc]  initWithRequest:(NSURLRequest *)
+    
 }
 
 -(IBAction)shareBtnClick:(id)sender{

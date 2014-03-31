@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "UMSocial.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController<UIWebViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
 @end
