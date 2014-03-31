@@ -51,13 +51,14 @@
     
         _appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         // Custom initialization
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight-20)];
         _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.pagingEnabled = YES;
         _scrollView.delaysContentTouches = NO;
         _scrollView.canCancelContentTouches =YES;
+        self.automaticallyAdjustsScrollViewInsets = NO;
         
         //默认第一屏
         indexLocation = 0;
@@ -85,7 +86,7 @@
     totalPage = [array count];
     
     for (int i = 0; i<[array count]; i++) {
-        SingleScrollView *singleView = [[SingleScrollView alloc] initWithFrame:CGRectMake(ScreenWidth*i, 0, ScreenWidth, self.view.frame.size.height) withBtnArray:[[array objectAtIndex:i] objectForKey:@"btn" ]];
+        SingleScrollView *singleView = [[SingleScrollView alloc] initWithFrame:CGRectMake(ScreenWidth*i, 0, ScreenWidth, ScreenHeight-20) withBtnArray:[[array objectAtIndex:i] objectForKey:@"btn" ]];
         singleView.btnDelegate = self;
         singleView.delegate = self;
         singleView.imageName = [[array objectAtIndex:i] objectForKey:@"img"];
@@ -100,8 +101,8 @@
         [_scrollView addSubview:singleView];
         
     }
-    _scrollView.frame = CGRectMake(0, 0, ScreenWidth, self.view.frame.size.height);
-    _scrollView.contentSize = CGSizeMake(ScreenWidth*[array count], self.view.frame.size.height);
+    _scrollView.frame = CGRectMake(0, 20, ScreenWidth, self.view.frame.size.height-20);
+    _scrollView.contentSize = CGSizeMake(ScreenWidth*[array count], _scrollView.frame.size.height);
     
     [self.view addSubview:_scrollView];
     
@@ -412,7 +413,7 @@
 
     if(!isShowBar){
         [UIView animateWithDuration:0.3 animations:^{
-            [_headView setFrame:CGRectMake(0, 0, 320, 50)];
+            [_headView setFrame:CGRectMake(0, 20, 320, 50)];
             [_bottomView setFrame:CGRectMake(0, self.view.frame.size.height-50, 320, 50)];
         } completion:^(BOOL finished){
             isShowBar = YES;
