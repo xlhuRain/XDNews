@@ -8,8 +8,13 @@
 
 #import "NewsViewController.h"
 #import "AFHTTPRequestOperation.h"
+#import "NewsViewCellTableViewCell.h"
 
 @interface NewsViewController ()
+
+
+@property(nonatomic,strong)NSMutableArray *newsListData;
+
 
 @end
 
@@ -34,21 +39,65 @@
     // Do any additional setup after loading the view from its nib.
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor greenColor];
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
+    
+    [self.view addSubview:self.tableView];
     
     //加载新闻列表
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:10.0];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-        
+        NSLog(@"responseObject %@",responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
     
-    [[NSOperationQueue mainQueue ] addOperation:operation];
     [operation start];
+
+}
+
+
+-(void)loadServerData{
+
+    
+}
+
+
+#pragma tableView
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 10;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    static NSString *identifier = @"NewsViewCell";
+    NewsViewCellTableViewCell *newsCell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+    if (newsCell == nil) {
+        newsCell = [[NewsViewCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    newsCell.thumbImgView.image = nil;
+    newsCell.titleLabel.text = @"";
+    newsCell.descLabel.text = @"";
+    
+    return newsCell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 }
 

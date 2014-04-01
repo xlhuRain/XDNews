@@ -41,6 +41,8 @@
 		1872D1A718E465560076AC55 /* libSocialYiXin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1872D19718E465550076AC55 /* libSocialYiXin.a */; };
 		1872D1AB18E467690076AC55 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872D1A918E467690076AC55 /* DetailViewController.m */; };
 		1872D1AC18E467690076AC55 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1872D1AA18E467690076AC55 /* DetailViewController.xib */; };
+		18B01E1E18EB13860048281D /* NewsViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */; };
+		18B01E1F18EB13860048281D /* NewsViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */; };
 		18B503D118DDCE6700D4D45C /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B503CF18DDCE6700D4D45C /* NewsViewController.m */; };
 		18B503D218DDCE6700D4D45C /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B503D018DDCE6700D4D45C /* NewsViewController.xib */; };
 		18C8C35718E3134D00BBAE11 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8C35618E3134D00BBAE11 /* MessageUI.framework */; };
@@ -239,6 +241,9 @@
 		1872D1A818E467690076AC55 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1872D1A918E467690076AC55 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1872D1AA18E467690076AC55 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		18B01E1B18EB13860048281D /* NewsViewCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewCellTableViewCell.h; sourceTree = "<group>"; };
+		18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewCellTableViewCell.m; sourceTree = "<group>"; };
+		18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		18B503CE18DDCE6700D4D45C /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		18B503CF18DDCE6700D4D45C /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		18B503D018DDCE6700D4D45C /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -732,6 +737,9 @@
 		18B503CD18DDCD4700D4D45C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18B01E1B18EB13860048281D /* NewsViewCellTableViewCell.h */,
+				18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */,
+				18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1124,6 +1132,7 @@
 				CBA5AA6918E42C6200217769 /* bar_bottom.png in Resources */,
 				18C8C45B18E3191D00BBAE11 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				18C8C44918E3191D00BBAE11 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				18B01E1F18EB13860048281D /* NewsViewCellTableViewCell.xib in Resources */,
 				CBA5AA5818E42C6200217769 /* welcome@2x.jpg in Resources */,
 				CBA5AA6D18E42C6200217769 /* share.png in Resources */,
 				1872D1A218E465550076AC55 /* UMSShareListController.xib in Resources */,
@@ -1197,6 +1206,7 @@
 				18D5EF1818E30F5B00DB2B5B /* AFHTTPSessionManager.m in Sources */,
 				18C8C3B718E315F800BBAE11 /* ASIInputStream.m in Sources */,
 				18C8C3CB18E3165300BBAE11 /* zip.c in Sources */,
+				18B01E1E18EB13860048281D /* NewsViewCellTableViewCell.m in Sources */,
 				18C8C3C918E3165300BBAE11 /* mztools.c in Sources */,
 				18B503D118DDCE6700D4D45C /* NewsViewController.m in Sources */,
 				18C8C3B618E315F800BBAE11 /* ASIHTTPRequest.m in Sources */,
