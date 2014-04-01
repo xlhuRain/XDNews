@@ -19,7 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent]; 
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //create cache
+    NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:4*1024*1024 diskCapacity:32*1024*1024 diskPath:@"app_cache"];
+    [NSURLCache setSharedURLCache:cache];
+
     
     [UMSocialData setAppKey:@"507fcab25270157b37000010"];
     

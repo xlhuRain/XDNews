@@ -35,23 +35,92 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view from its nib.
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight - 20)];
+    self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
     self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.view addSubview:self.indicatorView];
     
     
-//    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
-//    requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-//    NSDictionary *parameters = @{@"id":@"11"};
-//    [requestManager POST:@"http://www.baidu.com" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//    
-//    }];
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    [self.webView loadRequest:request];
+
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+
+    [self.indicatorView startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+
+    [self.indicatorView stopAnimating];
+    [self.indicatorView removeFromSuperview];
     
-//    AFHTTPRequestOperation *operation = [AFHTTPRequestOperation alloc]  initWithRequest:(NSURLRequest *)
+    //js与oc交互
+    [self loadNewsWebView];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"网络连接失败" message:@"数据加载失败,请检查网络!" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+    [alertview show];
+}
+
+-(void)loadNewsWebView{
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(webViewTap:)];
+    tapGesture.numberOfTouchesRequired = 1;
+    tapGesture.delegate = self;
+    [self.webView addGestureRecognizer:tapGesture];
+}
+
+-(void)webViewTap:(UITapGestureRecognizer*)sender{
+
+    int scrollPositionX = [[self.webView stringByEvaluatingJavaScriptFromString:@"window.pageXOffset"] intValue];
     
+    int displayWidth = [[self.webView stringByEvaluatingJavaScriptFromString:@"window.outerWidth"] intValue];
+    CGFloat scale = self.webView.frame.size.width / displayWidth;
+    
+    CGPoint pt = [sender locationInView:self.webView];
+    pt.x *= scale;
+    pt.y *= scale;
+    pt.x += scrollPositionX;
+    
+    NSString *js = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).tagName", pt.x, pt.y];
+    NSString * tagName = [self.webView stringByEvaluatingJavaScriptFromString:js];
+    
+    if ([tagName isEqualToString:@"IMG"]) {
+        NSString *imgURL = [NSString stringWithFormat:@"document.elementFromPoint(%f, %f).src", pt.x, pt.y];
+        NSString *urlToSave = [self.webView stringByEvaluatingJavaScriptFromString:imgURL];
+        
+        //得到高清图片的地址
+        NSString *newPath = [urlToSave stringByReplacingOccurrencesOfString:@"cache" withString:@"uploads"];
+        NSString *tem1 = [newPath substringFromIndex:7];
+        NSArray *tem2 = [tem1 componentsSeparatedByString:@"/"];
+        NSArray *tem3= [[tem2 lastObject] componentsSeparatedByString:@"."];
+        
+        NSString *realPath = [newPath stringByReplacingOccurrencesOfString:[tem2 lastObject] withString:[NSString stringWithFormat:@"%@.%@",[tem3 objectAtIndex:0],[tem3 lastObject]]];
+        
+//        [_imageView setImageWithURL:[NSURL URLWithString:realPath]  placeholderImage:nil options:SDWebImageCacheMemoryOnly  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+//
+
+//            if(image.size.height/image.size.width<1.33 && image.size.width>768){
+//                _imageView.frame = CGRectMake(0, 0, kScreenHeight, kScreenHeight*image.size.height/image.size.width);
+//            }else if(image.size.height/image.size.width>1.33 && image.size.height>1024){
+//                
+//                _imageView.frame = CGRectMake(0, 0, image.size.width*kScreenWidth/image.size.height,kScreenWidth);
+//                
+//            }else if(image.size.width==image.size.height && image.size.width>768){
+//                _imageView.frame = CGRectMake(0, 0, kScreenHeight, kScreenHeight);
+//            }else{
+//                _imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+//            }
+
+//        }];
+    }
+
 }
 
 -(IBAction)shareBtnClick:(id)sender{

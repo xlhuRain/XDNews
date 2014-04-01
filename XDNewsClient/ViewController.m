@@ -26,6 +26,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 
@@ -43,7 +44,7 @@
         self.magViewController = [[MagViewController alloc] init];
     }
     [self.navigationController pushViewController:self.magViewController animated:YES];
-    
 }
+
 
 @end

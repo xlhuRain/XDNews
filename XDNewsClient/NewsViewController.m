@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewController.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface NewsViewController ()
 
@@ -34,6 +35,21 @@
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     
+    //加载新闻列表
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10.0];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    [[NSOperationQueue mainQueue ] addOperation:operation];
+    [operation start];
+
 }
 
 -(IBAction)newsDetailClick:(id)sender{
