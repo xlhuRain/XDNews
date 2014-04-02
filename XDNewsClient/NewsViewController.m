@@ -34,9 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
-//    self.navigationController.navigationItem.leftBarButtonItem = backButton;
-    // Do any additional setup after loading the view from its nib.
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.tableView.delegate = self;
@@ -44,8 +41,15 @@
     self.tableView.backgroundColor = [UIColor greenColor];
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.showsVerticalScrollIndicator = YES;
-    
     [self.view addSubview:self.tableView];
+    
+    self.refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:self.tableView.frame];
+    self.refreshHeaderView.delegate = self;
+    [self.view insertSubview:self.refreshHeaderView belowSubview:self.tableView];
+    
+    //  update the last update date
+	[_refreshHeaderView refreshLastUpdatedDate];
+    
     
     //加载新闻列表
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
@@ -59,7 +63,9 @@
         
     }];
     
-    [operation start];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
+ 
 
 }
 
@@ -100,6 +106,73 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 }
+
+
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_refreshHeaderView egoRefreshScrollViewWillBeginScroll:scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+
+
+
 
 -(IBAction)newsDetailClick:(id)sender{
 

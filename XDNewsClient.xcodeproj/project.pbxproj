@@ -144,6 +144,8 @@
 		18D5EF3618E30F8500DB2B5B /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF2C18E30F8500DB2B5B /* UIProgressView+AFNetworking.m */; };
 		18D5EF3718E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF2E18E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m */; };
 		18D5EF3818E30F8500DB2B5B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF3018E30F8500DB2B5B /* UIWebView+AFNetworking.m */; };
+		CBA2F91D18EBFC04000C6C59 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA2F91A18EBFC04000C6C59 /* CircleView.m */; };
+		CBA2F92118EC09E3000C6C59 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA2F92018EC09E3000C6C59 /* EGORefreshTableHeaderView.m */; };
 		CBA5AA5818E42C6200217769 /* welcome@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBA5AA3D18E42C6200217769 /* welcome@2x.jpg */; };
 		CBA5AA5918E42C6200217769 /* about@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBA5AA3E18E42C6200217769 /* about@2x.jpg */; };
 		CBA5AA5A18E42C6200217769 /* banner_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA5AA3F18E42C6200217769 /* banner_loading.png */; };
@@ -391,6 +393,10 @@
 		18D5EF2E18E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		18D5EF2F18E30F8500DB2B5B /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		18D5EF3018E30F8500DB2B5B /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		CBA2F91918EBFC04000C6C59 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		CBA2F91A18EBFC04000C6C59 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		CBA2F91F18EC09E3000C6C59 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		CBA2F92018EC09E3000C6C59 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		CBA5AA3D18E42C6200217769 /* welcome@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "welcome@2x.jpg"; sourceTree = "<group>"; };
 		CBA5AA3E18E42C6200217769 /* about@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "about@2x.jpg"; sourceTree = "<group>"; };
 		CBA5AA3F18E42C6200217769 /* banner_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner_loading.png; sourceTree = "<group>"; };
@@ -740,6 +746,10 @@
 				18B01E1B18EB13860048281D /* NewsViewCellTableViewCell.h */,
 				18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */,
 				18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */,
+				CBA2F91918EBFC04000C6C59 /* CircleView.h */,
+				CBA2F91A18EBFC04000C6C59 /* CircleView.m */,
+				CBA2F91F18EC09E3000C6C59 /* EGORefreshTableHeaderView.h */,
+				CBA2F92018EC09E3000C6C59 /* EGORefreshTableHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1183,6 +1193,8 @@
 				181B46DD18DD88D80024CDED /* AppDelegate.m in Sources */,
 				18C8C3B318E315F800BBAE11 /* ASIDataDecompressor.m in Sources */,
 				18D5EF3318E30F8500DB2B5B /* UIAlertView+AFNetworking.m in Sources */,
+				CBA2F92118EC09E3000C6C59 /* EGORefreshTableHeaderView.m in Sources */,
+				CBA2F91D18EBFC04000C6C59 /* CircleView.m in Sources */,
 				18C8C3B918E315F800BBAE11 /* Reachability.m in Sources */,
 				181B46E618DD88D80024CDED /* ViewController.m in Sources */,
 				18D5EF1D18E30F5B00DB2B5B /* AFURLResponseSerialization.m in Sources */,
