@@ -1,14 +1,14 @@
 //
-//  NewsViewCellTableViewCell.m
+//  NewsViewCell.m
 //  XDNewsClient
 //
-//  Created by xlhu on 14-4-1.
+//  Created by xlhu_mac on 14-4-3.
 //  Copyright (c) 2014年 xlhu. All rights reserved.
 //
 
-#import "NewsViewCellTableViewCell.h"
+#import "NewsViewCell.h"
 
-@implementation NewsViewCellTableViewCell
+@implementation NewsViewCell
 
 - (void)awakeFromNib
 {

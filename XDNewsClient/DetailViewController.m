@@ -36,7 +36,7 @@
     // Do any additional setup after loading the view from its nib.
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight - 20)];
     self.webView.delegate = self;
-    [self.view addSubview:self.webView];
+//    [self.view addSubview:self.webView];
     
     self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.view addSubview:self.indicatorView];

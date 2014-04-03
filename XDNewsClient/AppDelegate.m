@@ -13,6 +13,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialYixinHandler.h"
 #import "UMSocialLaiwangHandler.h"
+#import "AFNetworkReachabilityManager.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,8 @@
     //create cache
     NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:4*1024*1024 diskCapacity:32*1024*1024 diskPath:@"app_cache"];
     [NSURLCache setSharedURLCache:cache];
+    //监控网络
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 
     
     [UMSocialData setAppKey:@"507fcab25270157b37000010"];

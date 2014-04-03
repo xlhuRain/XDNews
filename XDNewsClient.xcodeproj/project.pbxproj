@@ -41,8 +41,6 @@
 		1872D1A718E465560076AC55 /* libSocialYiXin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1872D19718E465550076AC55 /* libSocialYiXin.a */; };
 		1872D1AB18E467690076AC55 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872D1A918E467690076AC55 /* DetailViewController.m */; };
 		1872D1AC18E467690076AC55 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1872D1AA18E467690076AC55 /* DetailViewController.xib */; };
-		18B01E1E18EB13860048281D /* NewsViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */; };
-		18B01E1F18EB13860048281D /* NewsViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */; };
 		18B503D118DDCE6700D4D45C /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B503CF18DDCE6700D4D45C /* NewsViewController.m */; };
 		18B503D218DDCE6700D4D45C /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B503D018DDCE6700D4D45C /* NewsViewController.xib */; };
 		18C8C35718E3134D00BBAE11 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C8C35618E3134D00BBAE11 /* MessageUI.framework */; };
@@ -144,6 +142,8 @@
 		18D5EF3618E30F8500DB2B5B /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF2C18E30F8500DB2B5B /* UIProgressView+AFNetworking.m */; };
 		18D5EF3718E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF2E18E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m */; };
 		18D5EF3818E30F8500DB2B5B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5EF3018E30F8500DB2B5B /* UIWebView+AFNetworking.m */; };
+		CB07539A18ED055D0065728C /* NewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07539818ED055D0065728C /* NewsViewCell.m */; };
+		CB07539B18ED055D0065728C /* NewsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07539918ED055D0065728C /* NewsViewCell.xib */; };
 		CBA2F91D18EBFC04000C6C59 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA2F91A18EBFC04000C6C59 /* CircleView.m */; };
 		CBA2F92118EC09E3000C6C59 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA2F92018EC09E3000C6C59 /* EGORefreshTableHeaderView.m */; };
 		CBA5AA5818E42C6200217769 /* welcome@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBA5AA3D18E42C6200217769 /* welcome@2x.jpg */; };
@@ -243,9 +243,6 @@
 		1872D1A818E467690076AC55 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1872D1A918E467690076AC55 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1872D1AA18E467690076AC55 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		18B01E1B18EB13860048281D /* NewsViewCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewCellTableViewCell.h; sourceTree = "<group>"; };
-		18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewCellTableViewCell.m; sourceTree = "<group>"; };
-		18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		18B503CE18DDCE6700D4D45C /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		18B503CF18DDCE6700D4D45C /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		18B503D018DDCE6700D4D45C /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +390,9 @@
 		18D5EF2E18E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		18D5EF2F18E30F8500DB2B5B /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		18D5EF3018E30F8500DB2B5B /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		CB07539718ED055D0065728C /* NewsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewCell.h; sourceTree = "<group>"; };
+		CB07539818ED055D0065728C /* NewsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewCell.m; sourceTree = "<group>"; };
+		CB07539918ED055D0065728C /* NewsViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewCell.xib; sourceTree = "<group>"; };
 		CBA2F91918EBFC04000C6C59 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		CBA2F91A18EBFC04000C6C59 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		CBA2F91F18EC09E3000C6C59 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
@@ -743,13 +743,13 @@
 		18B503CD18DDCD4700D4D45C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18B01E1B18EB13860048281D /* NewsViewCellTableViewCell.h */,
-				18B01E1C18EB13860048281D /* NewsViewCellTableViewCell.m */,
-				18B01E1D18EB13860048281D /* NewsViewCellTableViewCell.xib */,
 				CBA2F91918EBFC04000C6C59 /* CircleView.h */,
 				CBA2F91A18EBFC04000C6C59 /* CircleView.m */,
 				CBA2F91F18EC09E3000C6C59 /* EGORefreshTableHeaderView.h */,
 				CBA2F92018EC09E3000C6C59 /* EGORefreshTableHeaderView.m */,
+				CB07539718ED055D0065728C /* NewsViewCell.h */,
+				CB07539818ED055D0065728C /* NewsViewCell.m */,
+				CB07539918ED055D0065728C /* NewsViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1142,9 +1142,9 @@
 				CBA5AA6918E42C6200217769 /* bar_bottom.png in Resources */,
 				18C8C45B18E3191D00BBAE11 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				18C8C44918E3191D00BBAE11 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				18B01E1F18EB13860048281D /* NewsViewCellTableViewCell.xib in Resources */,
 				CBA5AA5818E42C6200217769 /* welcome@2x.jpg in Resources */,
 				CBA5AA6D18E42C6200217769 /* share.png in Resources */,
+				CB07539B18ED055D0065728C /* NewsViewCell.xib in Resources */,
 				1872D1A218E465550076AC55 /* UMSShareListController.xib in Resources */,
 				1872D19F18E465550076AC55 /* UMShareEditViewControlleriPad.xib in Resources */,
 				CBA5AA6318E42C6200217769 /* title.png in Resources */,
@@ -1187,6 +1187,7 @@
 				18C8C3B418E315F800BBAE11 /* ASIDownloadCache.m in Sources */,
 				18D5EF3718E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m in Sources */,
 				18D5EF1B18E30F5B00DB2B5B /* AFURLConnectionOperation.m in Sources */,
+				CB07539A18ED055D0065728C /* NewsViewCell.m in Sources */,
 				18C8C3B818E315F800BBAE11 /* ASINetworkQueue.m in Sources */,
 				181B46D918DD88D80024CDED /* main.m in Sources */,
 				18D5EF3618E30F8500DB2B5B /* UIProgressView+AFNetworking.m in Sources */,
@@ -1218,7 +1219,6 @@
 				18D5EF1818E30F5B00DB2B5B /* AFHTTPSessionManager.m in Sources */,
 				18C8C3B718E315F800BBAE11 /* ASIInputStream.m in Sources */,
 				18C8C3CB18E3165300BBAE11 /* zip.c in Sources */,
-				18B01E1E18EB13860048281D /* NewsViewCellTableViewCell.m in Sources */,
 				18C8C3C918E3165300BBAE11 /* mztools.c in Sources */,
 				18B503D118DDCE6700D4D45C /* NewsViewController.m in Sources */,
 				18C8C3B618E315F800BBAE11 /* ASIHTTPRequest.m in Sources */,

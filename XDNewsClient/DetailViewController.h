@@ -11,4 +11,6 @@
 
 @interface DetailViewController : UIViewController<UIWebViewDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
+@property(nonatomic,strong)NSString *newsId;
+
 @end
