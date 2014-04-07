@@ -53,6 +53,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:37.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1];
     
     _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 175)];
     
@@ -74,7 +75,7 @@
     
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 21, 320, self.view.frame.size.height-21) style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [UIColor colorWithRed:37.0/255.0 green:35.0/255.0 blue:36.0/255.0 alpha:1];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.clipsToBounds = YES;
@@ -128,7 +129,7 @@
     _guideImageView.userInteractionEnabled = YES;
     [_guideImageView addGestureRecognizer:swipe];
     
-    [self.view addSubview:_guideImageView];
+//    [self.view addSubview:_guideImageView];
     
     NSString *url = @"http://club.beijing-hyundai.com.cn/survey2013/phone/data.php?d=2";
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
@@ -345,6 +346,11 @@
     [self reloadScrollView];
     [self.tableView reloadData];
     
+}
+
+-(BOOL)slideNavigationControllerShouldDisplayLeftMenu{
+
+    return YES;
 }
 
 

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideNavigationController.h"
+#import "MenuViewController.h"
+#import "SlideNavigationContorllerAnimatorSlide.h"
 
 @class ViewController;
 
@@ -14,7 +17,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) SlideNavigationController *navigationController;
 @property (strong, nonatomic) ViewController *viewController;
 
 @end

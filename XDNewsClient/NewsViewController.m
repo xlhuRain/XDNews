@@ -236,6 +236,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - SlideNavigationController Methods -
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+	return YES;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

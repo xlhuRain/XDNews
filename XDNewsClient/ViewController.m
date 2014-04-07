@@ -31,7 +31,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanCoverFrom:)];
-    [self.view addGestureRecognizer:panRecognizer];
+//    [self.view addGestureRecognizer:panRecognizer];
     
     isCoverShow = YES;
     self.coverView.frame = CGRectMake(0, -568, 320, 548);
@@ -101,21 +101,12 @@
 }
 
 
--(IBAction)buttonClick:(UIButton *)sender{
 
-    NewsViewController *newsViewController = [[NewsViewController alloc] init];
-    newsViewController.typeId = sender.tag;
-    [self.navigationController pushViewController:newsViewController animated:YES];
+#pragma mark - SlideNavigationController Methods -
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+	return YES;
 }
-
-
--(IBAction)MagazineButtonClick:(id)sender{
-   
-    if (!self.magViewController) {
-        self.magViewController = [[MagViewController alloc] init];
-    }
-    [self.navigationController pushViewController:self.magViewController animated:YES];
-}
-
 
 @end

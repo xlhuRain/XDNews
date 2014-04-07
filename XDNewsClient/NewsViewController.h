@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 #import "EGORefreshTableHeaderView.h"
+#import "SlideNavigationController.h"
 
-@interface NewsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate>{
+@interface NewsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,SlideNavigationControllerDelegate>{
     
     BOOL _reloading;
 }

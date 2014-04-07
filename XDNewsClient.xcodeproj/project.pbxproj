@@ -24,6 +24,13 @@
 		181B471A18DD93A80024CDED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B471918DD93A80024CDED /* Security.framework */; };
 		181B471C18DD93AF0024CDED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B471B18DD93AF0024CDED /* MobileCoreServices.framework */; };
 		181B471E18DD93BE0024CDED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B471D18DD93BE0024CDED /* SystemConfiguration.framework */; };
+		185B84C418F2EC2F001BFC7F /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84C318F2EC2F001BFC7F /* SlideNavigationController.m */; };
+		185B84D418F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84CA18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.m */; };
+		185B84D518F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84CC18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.m */; };
+		185B84D618F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84CE18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		185B84D718F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84D018F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.m */; };
+		185B84D818F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84D218F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		185B84DB18F2EC90001BFC7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B84DA18F2EC90001BFC7F /* MenuViewController.m */; };
 		1867B28418F243E800D1FC2A /* cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1867B28318F243E800D1FC2A /* cover.jpg */; };
 		1872D19918E465550076AC55 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1872D17218E465550076AC55 /* UMSocialLocalizable.strings */; };
 		1872D19A18E465550076AC55 /* libUMSocial_Sdk_3.3.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1872D18018E465550076AC55 /* libUMSocial_Sdk_3.3.6.a */; };
@@ -209,6 +216,21 @@
 		181B471918DD93A80024CDED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		181B471B18DD93AF0024CDED /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		181B471D18DD93BE0024CDED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		185B84C218F2EC2F001BFC7F /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
+		185B84C318F2EC2F001BFC7F /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		185B84C918F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		185B84CA18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		185B84CB18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		185B84CC18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		185B84CD18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		185B84CE18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		185B84CF18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		185B84D018F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		185B84D118F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		185B84D218F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		185B84D318F2EC69001BFC7F /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		185B84D918F2EC90001BFC7F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		185B84DA18F2EC90001BFC7F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		1867B28318F243E800D1FC2A /* cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover.jpg; sourceTree = "<group>"; };
 		1872D17318E465550076AC55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		1872D17518E465550076AC55 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -559,9 +581,6 @@
 				1867B28218F243D900D1FC2A /* Resource */,
 				181B46DB18DD88D80024CDED /* AppDelegate.h */,
 				181B46DC18DD88D80024CDED /* AppDelegate.m */,
-				181B46E418DD88D80024CDED /* ViewController.h */,
-				181B46E518DD88D80024CDED /* ViewController.m */,
-				181B46E718DD88D80024CDED /* ViewController.xib */,
 				18B503CC18DDCD3200D4D45C /* ViewController */,
 				18B503CD18DDCD4700D4D45C /* Views */,
 				181B46D318DD88D80024CDED /* Supporting Files */,
@@ -741,6 +760,13 @@
 		18B503CC18DDCD3200D4D45C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				181B46E418DD88D80024CDED /* ViewController.h */,
+				181B46E518DD88D80024CDED /* ViewController.m */,
+				181B46E718DD88D80024CDED /* ViewController.xib */,
+				185B84C218F2EC2F001BFC7F /* SlideNavigationController.h */,
+				185B84C318F2EC2F001BFC7F /* SlideNavigationController.m */,
+				185B84D918F2EC90001BFC7F /* MenuViewController.h */,
+				185B84DA18F2EC90001BFC7F /* MenuViewController.m */,
 				18B503CE18DDCE6700D4D45C /* NewsViewController.h */,
 				18B503CF18DDCE6700D4D45C /* NewsViewController.m */,
 				18B503D018DDCE6700D4D45C /* NewsViewController.xib */,
@@ -754,6 +780,17 @@
 		18B503CD18DDCD4700D4D45C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				185B84C918F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.h */,
+				185B84CA18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.m */,
+				185B84CB18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.h */,
+				185B84CC18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.m */,
+				185B84CD18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				185B84CE18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+				185B84CF18F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.h */,
+				185B84D018F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.m */,
+				185B84D118F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				185B84D218F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				185B84D318F2EC69001BFC7F /* SlideNavigationContorllerAnimator.h */,
 				CBA2F91918EBFC04000C6C59 /* CircleView.h */,
 				CBA2F91A18EBFC04000C6C59 /* CircleView.m */,
 				CBA2F91F18EC09E3000C6C59 /* EGORefreshTableHeaderView.h */,
@@ -1196,15 +1233,18 @@
 				CBA5AA8418E42CE500217769 /* NetworkState.m in Sources */,
 				18C8C3CA18E3165300BBAE11 /* unzip.c in Sources */,
 				18C8C3B518E315F800BBAE11 /* ASIFormDataRequest.m in Sources */,
+				185B84D518F2EC69001BFC7F /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				18C8C3B418E315F800BBAE11 /* ASIDownloadCache.m in Sources */,
 				18D5EF3718E30F8500DB2B5B /* UIRefreshControl+AFNetworking.m in Sources */,
 				18D5EF1B18E30F5B00DB2B5B /* AFURLConnectionOperation.m in Sources */,
 				CB07539A18ED055D0065728C /* NewsViewCell.m in Sources */,
 				18C8C3B818E315F800BBAE11 /* ASINetworkQueue.m in Sources */,
+				185B84DB18F2EC90001BFC7F /* MenuViewController.m in Sources */,
 				181B46D918DD88D80024CDED /* main.m in Sources */,
 				18D5EF3618E30F8500DB2B5B /* UIProgressView+AFNetworking.m in Sources */,
 				181B46DD18DD88D80024CDED /* AppDelegate.m in Sources */,
 				18C8C3B318E315F800BBAE11 /* ASIDataDecompressor.m in Sources */,
+				185B84D418F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				18D5EF3318E30F8500DB2B5B /* UIAlertView+AFNetworking.m in Sources */,
 				CBA2F92118EC09E3000C6C59 /* EGORefreshTableHeaderView.m in Sources */,
 				CBA2F91D18EBFC04000C6C59 /* CircleView.m in Sources */,
@@ -1218,13 +1258,17 @@
 				18C8C3C818E3165300BBAE11 /* ioapi.c in Sources */,
 				1872D1AB18E467690076AC55 /* DetailViewController.m in Sources */,
 				18D5EF1C18E30F5B00DB2B5B /* AFURLRequestSerialization.m in Sources */,
+				185B84D718F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				18D5EF3118E30F8500DB2B5B /* AFNetworkActivityIndicatorManager.m in Sources */,
 				18C8C3B218E315F800BBAE11 /* ASIDataCompressor.m in Sources */,
+				185B84C418F2EC2F001BFC7F /* SlideNavigationController.m in Sources */,
 				CBA5AA8018E42CE500217769 /* MagView.m in Sources */,
 				18D5EF1A18E30F5B00DB2B5B /* AFSecurityPolicy.m in Sources */,
 				CBA5AA8318E42CE500217769 /* AboutViewController.m in Sources */,
 				CBA5AA8718E42D8600217769 /* MagViewController.m in Sources */,
+				185B84D618F2EC69001BFC7F /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				18D5EF1618E30F5B00DB2B5B /* AFHTTPRequestOperation.m in Sources */,
+				185B84D818F2EC69001BFC7F /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				18D5EF1E18E30F5B00DB2B5B /* AFURLSessionManager.m in Sources */,
 				181B471718DD8ED40024CDED /* Utils.m in Sources */,
 				181B471818DD8ED40024CDED /* ConnectAPI.m in Sources */,

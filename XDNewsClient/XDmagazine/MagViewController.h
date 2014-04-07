@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "MagView.h"
+#import "SlideNavigationController.h"
 
-@interface MagViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MagViewDelegate,ASIHTTPRequestDelegate>
+@interface MagViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MagViewDelegate,ASIHTTPRequestDelegate,SlideNavigationControllerDelegate>
 
 
 @end

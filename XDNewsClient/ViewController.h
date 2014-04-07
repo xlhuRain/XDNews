@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MagViewController.h"
 
-@interface ViewController : UIViewController
+#import "SlideNavigationController.h"
 
-
-@property(nonatomic,strong)MagViewController *magViewController;
-
+@interface ViewController : UIViewController<SlideNavigationControllerDelegate>
 
 @end
