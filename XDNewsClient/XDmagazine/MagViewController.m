@@ -320,9 +320,9 @@
 
     self.contentScrView = [[ContentScrollView alloc] init];
     self.contentScrView.magId = magId;
-    self.contentScrView.shareContent = [[_homeDic objectForKey:@"share"] objectForKey:@"shareContent"];
-    self.contentScrView.shareUrl = [[_homeDic objectForKey:@"share"] objectForKey:@"shareURL"];
-    self.contentScrView.shareTitle = [[_homeDic objectForKey:@"share"] objectForKey:@"shareTitle"];
+//    self.contentScrView.shareContent = [[_homeDic objectForKey:@"share"] objectForKey:@"shareContent"];
+//    self.contentScrView.shareUrl = [[_homeDic objectForKey:@"share"] objectForKey:@"shareURL"];
+//    self.contentScrView.shareTitle = [[_homeDic objectForKey:@"share"] objectForKey:@"shareTitle"];
     self.contentScrView.view.backgroundColor = [UIColor clearColor];
     [self.navigationController pushViewController:self.contentScrView animated:YES ];
 }

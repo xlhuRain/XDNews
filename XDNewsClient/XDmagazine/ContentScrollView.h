@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ShareSDK/ShareSDK.h>
 #import "SingleScrollView.h"
 #import "AppDelegate.h"
-#import <MessageUI/MessageUI.h>
+#import "UMSocial.h"
 
-@interface ContentScrollView : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,SingleScrollViewDelegate,MFMailComposeViewControllerDelegate>{
+@interface ContentScrollView : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,SingleScrollViewDelegate>{
 
     int indexLocation;  //记录当前屏幕 动态加载
     int totalPage;      //总页数
@@ -22,8 +21,5 @@
 }
 
 @property(nonatomic,strong)NSString *magId;
-@property(nonatomic,strong)NSString *shareContent;
-@property(nonatomic,strong)NSString *shareUrl;
-@property(nonatomic,strong)NSString *shareTitle;
 
 @end

@@ -32,9 +32,6 @@
 @implementation ContentScrollView
 
 @synthesize magId = _magId;
-@synthesize shareContent = _shareContent;
-@synthesize shareUrl = _shareUrl;
-@synthesize shareTitle = _shareTitle;
 @synthesize scrollView = _scrollView;
 @synthesize filePath = _filePath;
 @synthesize dataSource = _dataSource;
@@ -201,70 +198,35 @@
 }
 
 -(void)shareBtnClick:(id)sender{
-    NSString *imagePath = [Utils applicationCachesDirectory:@"shareapp.jpg"];
+
+    //email
+    [UMSocialData defaultData].extConfig.emailData.title = @"主题是神马啊?";
+    UMSocialSnsPlatform *emailPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToEmail];
+    emailPlatform.bigImageName = @"email.png";
+    emailPlatform.displayName = @"投诉建议";
     
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:_shareContent
-                                       defaultContent:@"现代车尚"
-                                                image:[ShareSDK imageWithPath:imagePath]
-                                                title:_shareTitle
-                                                  url:_shareUrl
-                                          description:@"分享内容"
-                                            mediaType:SSPublishContentMediaTypeNews];
-    
-    //自定义菜单项
-    id<ISSShareActionSheetItem> item1 = [ShareSDK shareActionSheetItemWithTitle:@"现代俱乐部" icon:[UIImage imageNamed:@"link.png"]  clickHandler:^{
-    
+    //url to 现代俱乐部
+    UMSocialSnsPlatform *urlPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
+    urlPlatform.bigImageName = @"link.png";
+    urlPlatform.displayName = @"现代俱乐部";
+    urlPlatform.snsClickHandler = ^(UIViewController *presentingController, UMSocialControllerService * socialControllerService, BOOL isPresentInController){
+        //跳转
         NSURL *url = [ NSURL URLWithString:@"cn.com.beijing-hyundai.hclub://open"];
         if(![[UIApplication  sharedApplication] openURL:url]){
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/id652757799"]];
         }
         
-    }];
+    };
     
-    id<ISSShareActionSheetItem> item2 = [ShareSDK shareActionSheetItemWithTitle:@"投诉建议" icon:[UIImage imageNamed:@"email.png"]  clickHandler:^{
-        
-        [self sendEmail];
-        
-    }];
+    //设置微信好友分享url图片
+    [[UMSocialData defaultData].extConfig.wechatSessionData.urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://www.baidu.com/img/bdlogo.gif"];
     
-    
-    
-    //创建弹出菜单容器
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+    //    //设置微信朋友圈分享视频
+    //    [[UMSocialData defaultData].extConfig.wechatTimelineData.urlResource setResourceType:UMSocialUrlResourceTypeVideo url:@"http://v.youku.com/v_show/id_XNjQ1NjczNzEy.html?f=21207816&ev=2"];
     
     
-//    NSArray *shareList = [ShareSDK getShareListWithType:ShareTypeSinaWeibo, ShareTypeTencentWeibo,ShareTypeWeixiSession, nil];
-    
-    NSArray *shareList = [ShareSDK customShareListWithType:
-                          SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
-                          SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                          SHARE_TYPE_NUMBER(ShareTypeRenren),
-                          SHARE_TYPE_NUMBER(ShareTypeWeixiSession),
-                          item2,
-                          item1,
-                          nil];
-    
-    id<ISSShareOptions> shareOptions = [ShareSDK simpleShareOptionsWithTitle:@"分享" shareViewDelegate:nil];
-    
-    //弹出分享菜单
-    [ShareSDK showShareActionSheet:container
-                         shareList:shareList
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions:shareOptions
-                             result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                if (state == SSPublishContentStateSuccess)
-                                {
-                                    NSLog(@"分享成功");
-                                }
-                                else if (state == SSPublishContentStateFail)
-                                {
-                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
-                                }
-                            }];
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:@"507fcab25270157b37000010" shareText:@"安妮阿噻呦" shareImage:nil shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToEmail,UMShareToQQ,nil] delegate:nil];
+
 }
 
 
@@ -456,100 +418,6 @@
         }
     }
 }
-
-
-#pragma send email 
-
--(void)sendEmail{
-    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
-    
-    if (mailClass != nil)
-    {
-        if ([mailClass canSendMail])
-        {
-            [self displayComposerSheet];
-        }
-        else
-        {
-            [self launchMailAppOnDevice];
-        }
-    }
-    else
-    {
-        [self launchMailAppOnDevice];
-    }
-}
-
-//可以发送邮件的话
--(void)displayComposerSheet
-{
-    MFMailComposeViewController *mailPicker = [[MFMailComposeViewController alloc] init];
-    
-    mailPicker.mailComposeDelegate = self;
-    
-    //设置主题
-    [mailPicker setSubject: @"联系我们"];
-    [mailPicker setToRecipients:[NSArray arrayWithObjects:@"H-club@bhmc.com.cn", nil]];
-    
-    NSString *emailBody = @"您好，欢迎您的参与！";
-    [mailPicker setMessageBody:emailBody isHTML:YES];
-    
-//    [self presentModalViewController: mailPicker animated:YES];
-    [self presentViewController:mailPicker animated:YES completion:nil];
-}
-
--(void)launchMailAppOnDevice
-{
-    NSString *recipients = @"mailto:H-club@bhmc.com.cn&subject=my email!";
-    //@"mailto:first@example.com?cc=second@example.com,third@example.com&subject=my email!";
-    NSString *body = @"&body=email body!";
-    
-    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
-    email = [email stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-    
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:email]];
-}
-
-- (void) alertWithTitle: (NSString *)_title_ msg: (NSString *)msg
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:_title_
-                                                    message:msg
-                                                   delegate:nil
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-- (void)mailComposeController:(MFMailComposeViewController *)controller
-          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    NSString *msg;
-    
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-//            msg = @"邮件发送取消";
-            break;
-        case MFMailComposeResultSaved:
-            msg = @"邮件保存成功";
-            [self alertWithTitle:nil msg:msg];
-            break;
-        case MFMailComposeResultSent:
-            msg = @"邮件发送成功";
-            [self alertWithTitle:nil msg:msg];
-            break;
-        case MFMailComposeResultFailed:
-            msg = @"邮件发送失败";
-            [self alertWithTitle:nil msg:msg];
-            break;
-        default:
-            break;
-    }
-    
-//    [self dismissModalViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 - (void)didReceiveMemoryWarning
 {
